@@ -92,10 +92,36 @@
       <a href="#circles" class="nav__link" data-scramble="Circles">Circles</a>
       <a href="#live" class="nav__link" data-scramble="Live">Live</a>
     </div>
+    <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
     <a class="nav__listen" href="#listen" data-magnetic>
       <span class="nav__listen-dot"></span><span>Listen</span>
     </a>
   </nav>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__inner">
+      <p class="menu__kicker">The Dante's Inferno</p>
+      <nav class="menu__nav">
+        <a href="#manifesto" class="menu__link"><span class="menu__idx">01</span><span>Manifesto</span></a>
+        <a href="#band" class="menu__link"><span class="menu__idx">02</span><span>The Band</span></a>
+        <a href="#records" class="menu__link"><span class="menu__idx">03</span><span>Records</span></a>
+        <a href="#circles" class="menu__link"><span class="menu__idx">04</span><span>Circles</span></a>
+        <a href="#listen" class="menu__link"><span class="menu__idx">05</span><span>Listen</span></a>
+        <a href="#live" class="menu__link"><span class="menu__idx">06</span><span>Live</span></a>
+      </nav>
+      <div class="menu__foot">
+        <a href="https://tdantesinferno.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="https://www.instagram.com/the_dantes_inferno_tdi/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://open.spotify.com/album/4jYvmYKoTEuG3QTdG6CeE5" target="_blank" rel="noopener">Spotify</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="progress" id="progress" aria-hidden="true"><span class="progress__bar" id="progressBar"></span></div>
 
   <!-- ============ DEPTH METER (during circles) ============ -->
   <div class="depth" id="depth" aria-hidden="true">
@@ -121,8 +147,8 @@
       <div class="hero__inner">
         <p class="hero__kicker" data-split="chars">THE DANTE'S INFERNO</p>
         <h1 class="hero__title" aria-label="The Dante's Inferno">
-          <span class="hero__line" data-fire="DANTE'S">DANTE'S</span>
-          <span class="hero__line hero__line--stroke" data-fire="INFERNO">INFERNO</span>
+          <span class="hero__line" data-fire="DANTE'S" data-depth="0.22">DANTE'S</span>
+          <span class="hero__line hero__line--stroke" data-fire="INFERNO" data-depth="0.34">INFERNO</span>
         </h1>
         <div class="hero__sub">
           <span class="hero__flame-mark"><svg class="icon" aria-hidden="true"><use href="#i-flame"></use></svg></span>
@@ -149,6 +175,15 @@
         <span>Vermont Avenue Records</span><i><svg class="icon"><use href="#i-flame"></use></svg></i>
       </div>
     </div>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" id="stats" aria-label="By the numbers">
+      <div class="stats__item"><span class="stats__num" data-count="9">9</span><span class="stats__label">Circles of hell</span></div>
+      <div class="stats__item"><span class="stats__num" data-count="3">3</span><span class="stats__label">Records</span></div>
+      <div class="stats__item"><span class="stats__num" data-count="4">4</span><span class="stats__label">Players</span></div>
+      <div class="stats__item"><span class="stats__num" data-count="18">18</span><span class="stats__label">Tracks</span></div>
+      <div class="stats__item"><span class="stats__num" data-count="2025">2025</span><span class="stats__label">First descent</span></div>
+    </section>
 
     <!-- ============ MANIFESTO ============ -->
     <section class="manifesto" id="manifesto">
@@ -247,7 +282,7 @@
         <a class="btn reveal" href="https://www.instagram.com/the_dantes_inferno_tdi/" target="_blank" rel="noopener" data-magnetic>Follow for set times <svg class="icon"><use href="#i-arrow"></use></svg></a>
       </div>
       <div class="live__right">
-        <div class="live__disc" data-tilt aria-hidden="true">
+        <div class="live__disc" data-tilt data-gyro-tilt aria-hidden="true">
           <img src="images/cover-deal-with-the-devil.jpg" alt="">
         </div>
         <span class="live__stamp"><em>Fusion from hell — every week</em></span>

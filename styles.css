@@ -637,3 +637,134 @@ body.js .reveal.fallback-visible { opacity: 1 !important; transform: none !impor
 /* ============ ICON SYSTEM ============ */
 .icon { width: 1em; height: 1em; display: inline-block; flex-shrink: 0; vertical-align: middle; fill: currentColor; }
 .member__glyph svg, .modal__close svg { stroke: currentColor; }
+
+/* ==========================================================================
+   V2 — MOBILE MENU, PROGRESS, STATS, GLITCH, GYRO-TILT
+   ========================================================================== */
+
+/* ============ SCROLL PROGRESS ============ */
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 150;
+  pointer-events: none;
+}
+.progress__bar {
+  display: block; height: 100%; width: 100%;
+  background: linear-gradient(90deg, var(--blood), var(--ember), var(--gold));
+  transform-origin: left; transform: scaleX(0);
+  box-shadow: 0 0 12px rgba(255,90,31,0.6);
+}
+
+/* ============ NAV BURGER ============ */
+.nav__burger {
+  display: none; position: relative; z-index: 560;
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(247,239,226,0.4); background: transparent;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.nav__burger span {
+  display: block; width: 18px; height: 2px; background: var(--bone);
+  transition: transform 0.35s var(--ease), opacity 0.25s ease;
+}
+.nav__burger.is-open span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }
+.nav__burger.is-open span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
+
+/* ============ MOBILE MENU ============ */
+.menu {
+  position: fixed; inset: 0; z-index: 550;
+  pointer-events: none; visibility: hidden;
+  background: radial-gradient(120% 90% at 50% 115%, rgba(193,39,45,0.5) 0%, rgba(10,5,3,0.97) 55%);
+  backdrop-filter: blur(14px);
+}
+.menu.is-open { pointer-events: auto; visibility: visible; }
+.menu__inner {
+  position: relative; height: 100%; display: flex; flex-direction: column;
+  justify-content: center; padding: calc(4rem + env(safe-area-inset-top)) var(--pad) 3rem;
+}
+.menu__kicker {
+  font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem; display: block;
+}
+.menu__nav { display: flex; flex-direction: column; gap: 0.2rem; }
+.menu__link {
+  font-family: var(--disp); font-size: clamp(2.4rem, 9.5vw, 4rem); line-height: 1.05;
+  text-transform: uppercase; color: var(--bone);
+  display: flex; align-items: baseline; gap: 1rem;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--line-soft);
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.menu__link .menu__idx {
+  font-family: var(--serif); font-style: italic; font-size: 0.4em; color: var(--ember);
+}
+.menu__link:active, .menu__link:hover { color: var(--ember); padding-left: 0.4rem; }
+.menu__foot {
+  margin-top: 2.4rem; display: flex; flex-wrap: wrap; gap: 1.4rem;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--smoke);
+}
+.menu__foot a { border-bottom: 1px solid transparent; transition: color 0.3s ease, border-color 0.3s ease; }
+.menu__foot a:hover { color: var(--ember); border-color: var(--ember); }
+
+/* ============ STATS ============ */
+.stats {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 1px; background: var(--line-soft);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.stats__item {
+  background: var(--ash); padding: clamp(1.6rem, 3vw, 2.6rem) 1rem;
+  text-align: center; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.stats__num {
+  font-family: var(--disp); font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: 1;
+  color: var(--ember); font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 30px rgba(255,90,31,0.35);
+}
+.stats__label {
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--smoke);
+}
+
+/* ============ GLITCH HOVER (covers + band photo) ============ */
+.record__cover::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: repeating-linear-gradient(180deg, rgba(255,90,31,0) 0 3px, rgba(255,90,31,0.07) 3px 4px);
+  opacity: 0; transition: opacity 0.4s ease; mix-blend-mode: overlay;
+}
+.record:hover .record__cover::after { opacity: 1; }
+
+@keyframes coverGlitch {
+  0%   { transform: translate(0,0) scale(1.08); filter: none; }
+  18%  { transform: translate(-4px,1px) scale(1.08); filter: hue-rotate(-9deg) saturate(1.5); }
+  36%  { transform: translate(4px,-1px) scale(1.08); filter: hue-rotate(7deg) contrast(1.18); }
+  54%  { transform: translate(-3px,0) scale(1.08); filter: hue-rotate(-5deg); }
+  72%  { transform: translate(3px,1px) scale(1.08); filter: hue-rotate(4deg) saturate(1.35); }
+  100% { transform: translate(0,0) scale(1.08); filter: none; }
+}
+.record:hover .record__cover img { animation: coverGlitch 0.45s steps(2) infinite; }
+
+@keyframes bandHeat {
+  0%,100% { filter: saturate(1.08) contrast(1.06) hue-rotate(0deg); }
+  50% { filter: saturate(1.35) contrast(1.12) hue-rotate(-6deg); }
+}
+.band__photo img { transition: filter 0.6s ease, transform 0.8s var(--ease); }
+.band__photo:hover img { animation: bandHeat 2.4s ease-in-out infinite; transform: scale(1.04); }
+
+/* ============ GYRO-TILT (mobile) ============ */
+[data-gyro-tilt] { will-change: transform; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .nav__burger { display: flex; }
+  .nav__listen { display: none; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stats__item:nth-child(4), .stats__item:nth-child(5) { grid-column: span 1; }
+}
+@media (max-width: 480px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stats__item:last-child { grid-column: span 2; }
+}
+
+@media (min-width: 769px) {
+  .menu { display: none; }
+}

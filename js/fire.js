@@ -129,7 +129,7 @@
     _resize: function () {
       var gl = this._gl;
       if (!gl) return;
-      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      var dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 1.5);
       var w = Math.floor(window.innerWidth * dpr);
       var h = Math.floor(window.innerHeight * dpr);
       if (this._canvas.width !== w || this._canvas.height !== h) {
@@ -183,6 +183,7 @@
   var Embers = {
     _canvas: null, _ctx: null, _parts: [], _sprite: null, _running: false, _raf: 0,
     _w: 0, _h: 0, intensity: 1, _pointer: { x: 0.5, y: 0.5 },
+    _wind: 0, _windTarget: 0,
     _count: 130,
 
     init: function () {
@@ -220,17 +221,19 @@
 
     setPointer: function (x, y) { this._pointer.x = x; this._pointer.y = y; },
     setIntensity: function (v) { this.intensity = v; },
+    setWind: function (v) { this._windTarget = v; },
 
     _loop: function () {
       if (!this._running) return;
       var ctx = this._ctx;
       ctx.clearRect(0, 0, this._w, this._h);
       ctx.globalCompositeOperation = "lighter";
+      this._wind += (this._windTarget - this._wind) * 0.08;
       var count = Math.floor(this._count * (0.4 + 0.6 * this.intensity));
       for (var i = 0; i < count; i++) {
         var p = this._parts[i];
         p.age += 0.016;
-        p.x += p.vx + Math.sin(p.age * 3 + p.phase) * 0.3;
+        p.x += p.vx + this._wind + Math.sin(p.age * 3 + p.phase) * 0.3;
         p.y += p.vy;
         if (p.y < -20 || p.age > p.life) {
           var np = this._make(false);
