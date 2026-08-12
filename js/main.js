@@ -707,6 +707,7 @@
     renderRecords();
     renderCircles();
     renderListenTabs();
+    initTilt(document.querySelectorAll(".live__disc"));
 
     // modal events (always available)
     document.querySelectorAll("[data-close]").forEach(function (el) {

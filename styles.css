@@ -244,6 +244,7 @@ body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor [rol
 .hero__line {
   display: block; font-size: clamp(4rem, 17vw, 17rem);
   letter-spacing: 0.01em; color: var(--bone);
+  white-space: nowrap;
   will-change: transform;
 }
 .hero__line .ch { text-shadow: 0 0 40px rgba(255,90,31,0.25); }
@@ -516,7 +517,7 @@ body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor [rol
 /* ============ FOOTER ============ */
 .footer { border-top: 1px solid var(--line); padding: clamp(3rem, 7vh, 5rem) var(--pad) 2rem; background: #060301; }
 .footer__wordmark { display: block; font-family: var(--disp); line-height: 0.84; text-align: center; margin-bottom: 3.5rem; }
-.footer__wm-line { display: block; font-size: clamp(3.4rem, 13vw, 12rem); color: var(--bone); }
+.footer__wm-line { display: block; font-size: clamp(3.4rem, 13vw, 12rem); color: var(--bone); white-space: nowrap; }
 .footer__wm-line .ch { display: inline-block; text-shadow: 0 0 50px rgba(255,90,31,0.3); }
 .footer__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
 .footer__col { display: flex; flex-direction: column; gap: 0.7rem; }
@@ -656,9 +657,9 @@ body.js .reveal.fallback-visible { opacity: 1 !important; transform: none !impor
 
 /* ============ NAV BURGER ============ */
 .nav__burger {
-  display: none; position: relative; z-index: 560;
+  display: none; position: fixed; top: calc(1rem + env(safe-area-inset-top)); right: var(--pad); z-index: 560;
   width: 46px; height: 46px; border-radius: 50%;
-  border: 1px solid rgba(247,239,226,0.4); background: transparent;
+  border: 1px solid rgba(247,239,226,0.4); background: rgba(10,5,3,0.4); backdrop-filter: blur(4px);
   flex-direction: column; align-items: center; justify-content: center; gap: 5px;
   transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -719,6 +720,7 @@ body.js .reveal.fallback-visible { opacity: 1 !important; transform: none !impor
   font-family: var(--disp); font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: 1;
   color: var(--ember); font-variant-numeric: tabular-nums;
   text-shadow: 0 0 30px rgba(255,90,31,0.35);
+  display: inline-block; min-width: 4ch;
 }
 .stats__label {
   font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.26em;
@@ -741,7 +743,7 @@ body.js .reveal.fallback-visible { opacity: 1 !important; transform: none !impor
   72%  { transform: translate(3px,1px) scale(1.08); filter: hue-rotate(4deg) saturate(1.35); }
   100% { transform: translate(0,0) scale(1.08); filter: none; }
 }
-.record:hover .record__cover img { animation: coverGlitch 0.45s steps(2) infinite; }
+.record:hover .record__cover img { animation: coverGlitch 0.45s steps(2) 1; }
 
 @keyframes bandHeat {
   0%,100% { filter: saturate(1.08) contrast(1.06) hue-rotate(0deg); }
@@ -752,6 +754,11 @@ body.js .reveal.fallback-visible { opacity: 1 !important; transform: none !impor
 
 /* ============ GYRO-TILT (mobile) ============ */
 [data-gyro-tilt] { will-change: transform; }
+
+/* Prevent CSS transition from smearing against per-frame gyro tilt on touch */
+@media (pointer: coarse) {
+  [data-gyro-tilt] { transition: none !important; }
+}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {

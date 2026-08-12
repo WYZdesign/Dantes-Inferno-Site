@@ -92,13 +92,15 @@
       <a href="#circles" class="nav__link" data-scramble="Circles">Circles</a>
       <a href="#live" class="nav__link" data-scramble="Live">Live</a>
     </div>
-    <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
     <a class="nav__listen" href="#listen" data-magnetic>
       <span class="nav__listen-dot"></span><span>Listen</span>
     </a>
   </nav>
+
+  <!-- standalone so it escapes the nav's mix-blend stacking context -->
+  <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
 
   <!-- ============ MOBILE MENU ============ -->
   <div class="menu" id="menu" aria-hidden="true">
