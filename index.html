@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0503">
+  <meta name="application-name" content="The Dante's Inferno">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>The Dante's Inferno — Fusion From Hell</title>
+  <meta name="description" content="The Dante's Inferno is a fusion / funk / jazz project from Los Angeles, led by drummer Dante Newcombe-Kenealy. Nine circles deep, all groove. Records: Descent, Grid Failure, Deal With the Devil — out now on Vermont Avenue Records.">
+  <meta property="og:title" content="The Dante's Inferno — Fusion From Hell">
+  <meta property="og:description" content="Fusion / funk / jazz from Los Angeles. Led by Dante Newcombe-Kenealy. On Vermont Avenue Records.">
+  <meta property="og:image" content="images/og.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="images/cover-deal-with-the-devil.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ SVG ICON SPRITE ============ -->
+  <svg class="icons" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
+    <defs>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c.6 3.2-1.2 4.6-2.4 6.2C8 10.3 6.5 12 6.5 14.5A5.5 5.5 0 0 0 12 20a5.5 5.5 0 0 0 5.5-5.5c0-2.4-1.2-4-2.6-5.3-.6 1.2-1.7 2-2.9 2.2C12.6 9 13.4 5.6 12 2z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M10 6v12l9-6z"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></symbol>
+      <symbol id="i-drum" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0 9 9 0 0 1-18 0zm0 0c0 5 4 8 9 8s9-3 9-8m-9 0v-3M5 12h14M12 9V6M10 6l2-3 2 3"/></symbol>
+      <symbol id="i-guitar" viewBox="0 0 24 24"><path d="M15 4l5 5M15 4l-3 3a4 4 0 0 0 3 7l3-3-5-5-3 3M6.5 13.5a3.5 3.5 0 0 1 4.5-4.5M9.5 20a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3z"/></symbol>
+      <symbol id="i-bass" viewBox="0 0 24 24"><path d="M7 4v11M7 4h10M7 8h10M7 12h10M7 15h10M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></symbol>
+      <symbol id="i-keys" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM6 9h.01M9 9h.01M12 9h.01M15 9h.01M18 9h.01M6 13h.01M9 13h.01M12 13h.01M15 13h.01M18 13h.01M6 17h.01M9 17h.01M12 17h.01M15 17h.01M18 17h.01"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.6 6.2 6.7.5-5.1 4.4 1.6 6.5L12 16.4 6.2 19.6l1.6-6.5-5.1-4.4 6.7-.5z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.4.2 4.6 1.9 4.6 4.6.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 2.8-1.9 4.6-4.6 4.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-2.8-.1-4.6-1.9-4.6-4.6-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9C2.6 4.2 4.4 2.4 7.1 2.3c1.3-.1 1.7-.1 4.9-.1zm0 3.6A6.2 6.2 0 1 0 12 18.2a6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.45 1.45 0 1 1-2.9 0 1.45 1.45 0 0 1 2.9 0z"/></symbol>
+      <symbol id="i-bandcamp" viewBox="0 0 24 24"><path d="M4 5h16l-8 14H4z"/></symbol>
+      <symbol id="i-spotify" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-5-1.6-8.3-.9a.6.6 0 1 1-.2-1.2c3.6-.8 6.8-.4 9.3 1.1.3.2.3.6 0 .8zm1.2-2.7a.75.75 0 0 1-1 .25c-2.5-1.6-6.4-2-9.4-1.1a.75.75 0 1 1-.4-1.45c3.4-1 7.8-.5 10.7 1.3.35.2.45.65.1 1zm.1-2.8c-3-1.8-8-2-10.9-1.1a.9.9 0 1 1-.5-1.7c3.3-1 9-0.8 12.5 1.2a.9.9 0 0 1-1.1 1.6z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ GRAIN / VIGNETTE OVERLAY ============ -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ============ GLOBAL FIRE CANVAS ============ -->
+  <canvas class="fire-bg" id="fireWebGL" aria-hidden="true"></canvas>
+  <canvas class="embers" id="embers" aria-hidden="true"></canvas>
+
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><span class="cursor__label"></span></span>
+  </div>
+  <canvas class="cursor-spark" id="cursorSpark" aria-hidden="true"></canvas>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre__rings">
+      <i class="pre__ring" style="--i:0"></i><i class="pre__ring" style="--i:1"></i><i class="pre__ring" style="--i:2"></i>
+      <i class="pre__ring" style="--i:3"></i><i class="pre__ring" style="--i:4"></i><i class="pre__ring" style="--i:5"></i>
+      <i class="pre__ring" style="--i:6"></i><i class="pre__ring" style="--i:7"></i><i class="pre__ring" style="--i:8"></i>
+    </div>
+    <div class="pre__center">
+      <span class="pre__word">DANTE'S<br>INFERNO</span>
+      <span class="pre__status">DESCENDING</span>
+      <span class="pre__count" id="preCount">00</span>
+    </div>
+    <div class="pre__circles" id="preCircles">
+      <span>I Limbo</span><span>II Lust</span><span>III Gluttony</span>
+      <span>IV Greed</span><span>V Anger</span><span>VI Heresy</span>
+      <span>VII Violence</span><span>VIII Fraud</span><span>IX Treachery</span>
+    </div>
+    <div class="pre__bar"><span class="pre__bar-fill" id="preBar"></span></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <a class="nav__brand" href="#hero" aria-label="The Dante's Inferno home" data-magnetic>
+      <span class="nav__mark">TDI</span>
+      <span class="nav__sub">FUSION FROM HELL</span>
+    </a>
+    <div class="nav__links">
+      <a href="#manifesto" class="nav__link" data-scramble="Manifesto">Manifesto</a>
+      <a href="#band" class="nav__link" data-scramble="The Band">The Band</a>
+      <a href="#records" class="nav__link" data-scramble="Records">Records</a>
+      <a href="#circles" class="nav__link" data-scramble="Circles">Circles</a>
+      <a href="#live" class="nav__link" data-scramble="Live">Live</a>
+    </div>
+    <a class="nav__listen" href="#listen" data-magnetic>
+      <span class="nav__listen-dot"></span><span>Listen</span>
+    </a>
+  </nav>
+
+  <!-- ============ DEPTH METER (during circles) ============ -->
+  <div class="depth" id="depth" aria-hidden="true">
+    <span class="depth__label">DESCENT</span>
+    <div class="depth__track"><span class="depth__fill" id="depthFill"></span></div>
+    <span class="depth__val" id="depthVal">0 / 9</span>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__parallax" data-depth="0.5" aria-hidden="true"></div>
+
+      <div class="hero__meta hero__meta--left">
+        <span class="rot">EST. LOS ANGELES</span>
+        <span class="rot">CALIFORNIA</span>
+      </div>
+      <div class="hero__meta hero__meta--right">
+        <span class="rot">ALL ORIGINALS</span>
+        <span class="rot">NO MERCY</span>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__kicker" data-split="chars">THE DANTE'S INFERNO</p>
+        <h1 class="hero__title" aria-label="The Dante's Inferno">
+          <span class="hero__line" data-fire="DANTE'S">DANTE'S</span>
+          <span class="hero__line hero__line--stroke" data-fire="INFERNO">INFERNO</span>
+        </h1>
+        <div class="hero__sub">
+          <span class="hero__flame-mark"><svg class="icon" aria-hidden="true"><use href="#i-flame"></use></svg></span>
+          <p class="hero__tagline">Fusion <em>from</em> hell</p>
+          <p class="hero__tag">Jazz · Fusion · Funk · Experimental — Los Angeles, California</p>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <span>SCROLL TO DESCEND</span>
+        <span class="hero__scroll-arrow"><svg class="icon" aria-hidden="true"><use href="#i-down"></use></svg></span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span>Fusion From Hell</span><i><svg class="icon"><use href="#i-flame"></use></svg></i>
+        <span>Los Angeles</span><i><svg class="icon"><use href="#i-star"></use></svg></i>
+        <span>Jazz Fusion</span><i><svg class="icon"><use href="#i-flame"></use></svg></i>
+        <span>Experimental</span><i><svg class="icon"><use href="#i-star"></use></svg></i>
+        <span>Funk</span><i><svg class="icon"><use href="#i-flame"></use></svg></i>
+        <span>Instrumental</span><i><svg class="icon"><use href="#i-star"></use></svg></i>
+        <span>Vermont Avenue Records</span><i><svg class="icon"><use href="#i-flame"></use></svg></i>
+      </div>
+    </div>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="manifesto">
+      <span class="section__label reveal">01 / MANIFESTO</span>
+      <h2 class="manifesto__lead">
+        <span class="w">Fusion</span>
+        <span class="w"><em>from</em></span>
+        <span class="w">hell.</span>
+      </h2>
+      <p class="manifesto__body">
+        <span class="w">The</span><span class="w">Dante's</span><span class="w">Inferno</span><span class="w">is</span><span class="w">a</span><span class="w">fusion</span><span class="w">/</span><span class="w">funk</span><span class="w">/</span><span class="w">jazz</span><span class="w">project</span><span class="w">led</span><span class="w">by</span><span class="w">drummer</span><span class="w">Dante</span><span class="w">Newcombe-Kenealy.</span>
+      </p>
+      <p class="manifesto__body">
+        <span class="w">All</span><span class="w">originals.</span><span class="w">Nine</span><span class="w">circles</span><span class="w">deep,</span><span class="w">all</span><span class="w">groove.</span><span class="w">Recorded</span><span class="w">live</span><span class="w">with</span><span class="w">overdubs</span><span class="w">at</span><span class="w">the</span><span class="w">Vintage</span><span class="w">Synth</span><span class="w">Museum</span><span class="w">in</span><span class="w">Highland</span><span class="w">Park,</span><span class="w">Los</span><span class="w">Angeles.</span>
+      </p>
+      <div class="manifesto__foot reveal">
+        <span class="manifesto__signature"><em>— The Dante's Inferno</em></span>
+        <span class="manifesto__sig">Los Angeles, California · Vermont Avenue Records</span>
+      </div>
+    </section>
+
+    <!-- ============ THE BAND ============ -->
+    <section class="band" id="band">
+      <div class="band__head">
+        <span class="section__label reveal">02 / THE BAND</span>
+        <h2 class="band__title reveal">Four players,<br><em>one descent</em></h2>
+        <p class="band__intro reveal">Drummer Dante Newcombe-Kenealy leads a quartet of heathens through the nine circles of groove — Adrian Riachta on guitar, Benji Baumewerd on bass, and Emmy-nominated animator-turned-keysmith Louie Zong on synths.</p>
+      </div>
+
+      <div class="band__photo reveal" id="bandPhoto">
+        <img src="images/artist-dantes.jpg" alt="The Dante's Inferno — band photo">
+        <span class="band__photo-cap">The quartet, somewhere south of Limbo</span>
+      </div>
+
+      <div class="band__grid" id="bandGrid"></div>
+    </section>
+
+    <!-- ============ RECORDS ============ -->
+    <section class="records" id="records">
+      <div class="records__head">
+        <span class="section__label reveal">03 / RECORDS</span>
+        <h2 class="records__title reveal">Three records<br><em>into the fire</em></h2>
+        <p class="records__sub reveal">Click a record to drop the needle.</p>
+      </div>
+      <div class="records__list" id="recordsList"></div>
+    </section>
+
+    <!-- ============ NINE CIRCLES ============ -->
+    <section class="circles" id="circles">
+      <div class="circles__head">
+        <span class="section__label reveal">04 / THE NINE CIRCLES</span>
+        <h2 class="circles__title reveal">Descend.</h2>
+      </div>
+      <div class="circles__track" id="circlesTrack"></div>
+    </section>
+
+    <!-- ============ LISTEN ============ -->
+    <section class="listen" id="listen">
+      <div class="listen__left">
+        <span class="section__label reveal">05 / LISTEN</span>
+        <h2 class="listen__title reveal">Press play,<br><em>meet the devil</em></h2>
+        <p class="listen__copy reveal">All three records are streaming now. Pick your circle:</p>
+        <div class="listen__tabs" id="listenTabs">
+          <button class="listen__tab is-active" data-album="deal-with-the-devil">Deal With the Devil</button>
+          <button class="listen__tab" data-album="descent">Descent</button>
+          <button class="listen__tab" data-album="grid-failure">Grid Failure</button>
+        </div>
+        <div class="listen__links reveal">
+          <a class="btn" href="https://tdantesinferno.bandcamp.com" target="_blank" rel="noopener" data-magnetic>Bandcamp <svg class="icon"><use href="#i-bandcamp"></use></svg></a>
+          <a class="btn btn--ghost" href="https://www.instagram.com/the_dantes_inferno_tdi/" target="_blank" rel="noopener" data-magnetic>Instagram <svg class="icon"><use href="#i-instagram"></use></svg></a>
+        </div>
+      </div>
+      <div class="listen__right">
+        <div class="listen__player" id="listenPlayer">
+          <div class="listen__embed" id="listenEmbed"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIVE ============ -->
+    <section class="live" id="live">
+      <div class="live__glow" aria-hidden="true"></div>
+      <div class="live__left">
+        <span class="section__label reveal">06 / LIVE</span>
+        <h2 class="live__title reveal">Thursdays<br><em>on</em> the block</h2>
+        <p class="live__copy reveal">
+          Every Thursday, doors at 8PM — an open mic &amp; jam night at
+          <strong>The Stowaway, Downtown LA</strong>. The Vermont Avenue family
+          hits the block weekly. Bring your instrument, bring your voice.
+        </p>
+        <div class="live__details reveal">
+          <div class="live__detail"><span class="live__detail-k">Where</span><span class="live__detail-v">The Stowaway · 416 S Spring St, DTLA <a class="live__map" href="https://www.google.com/maps/search/?api=1&query=The+Stowaway%2C+416+S+Spring+St%2C+Los+Angeles%2C+CA+90013" target="_blank" rel="noopener">Map <svg class="icon"><use href="#i-arrow"></use></svg></a></span></div>
+          <div class="live__detail"><span class="live__detail-k">When</span><span class="live__detail-v">Every Thursday · Doors 8PM</span></div>
+          <div class="live__detail"><span class="live__detail-k">Book</span><span class="live__detail-v"><a href="https://tdantesinferno.bandcamp.com/contact" target="_blank" rel="noopener">Contact the band for bookings <svg class="icon"><use href="#i-arrow"></use></svg></a></span></div>
+        </div>
+        <a class="btn reveal" href="https://www.instagram.com/the_dantes_inferno_tdi/" target="_blank" rel="noopener" data-magnetic>Follow for set times <svg class="icon"><use href="#i-arrow"></use></svg></a>
+      </div>
+      <div class="live__right">
+        <div class="live__disc" data-tilt aria-hidden="true">
+          <img src="images/cover-deal-with-the-devil.jpg" alt="">
+        </div>
+        <span class="live__stamp"><em>Fusion from hell — every week</em></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <a class="footer__wordmark" href="#hero" aria-label="Back to top">
+      <span class="footer__wm-line" data-fire="INFERNO">INFERNO</span>
+    </a>
+    <div class="footer__grid">
+      <div class="footer__col">
+        <span class="footer__h">Navigate</span>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#band">The Band</a>
+        <a href="#records">Records</a>
+        <a href="#circles">Circles</a>
+        <a href="#live">Live</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__h">Listen</span>
+        <a href="https://tdantesinferno.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="https://open.spotify.com/album/4jYvmYKoTEuG3QTdG6CeE5" target="_blank" rel="noopener">Spotify — Deal With the Devil</a>
+        <a href="https://open.spotify.com/album/2EIgIgobSYHYgNVxgYgBKk" target="_blank" rel="noopener">Spotify — Descent</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__h">Connect</span>
+        <a href="https://www.instagram.com/the_dantes_inferno_tdi/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://vermontavenuerecords.bandcamp.com" target="_blank" rel="noopener">Vermont Avenue Records</a>
+      </div>
+      <div class="footer__col footer__col--stamp">
+        <span><em>Fusion from hell.</em></span>
+        <span class="footer__est">EST. LOS ANGELES · 2025</span>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span id="year">2026</span> The Dante's Inferno</span>
+      <span>On Vermont Avenue Records · Created by musicians, for musicians.</span>
+      <span class="footer__top"><a href="#hero">Back to the surface <svg class="icon"><use href="#i-up"></use></svg></a></span>
+    </div>
+    <div class="footer__credit">
+      Website created by <a href="https://www.wyzdesign.com" target="_blank" rel="noopener">WYZ Design™</a>
+    </div>
+  </footer>
+
+  <!-- ============ ALBUM MODAL ============ -->
+  <div class="modal" id="albumModal" aria-hidden="true">
+    <div class="modal__scrim" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close aria-label="Close"><svg class="icon"><use href="#i-close"></use></svg></button>
+      <div class="modal__grid">
+        <div class="modal__cover" id="modalCover"><img src="" alt=""></div>
+        <div class="modal__body">
+          <span class="modal__label" id="modalLabel"></span>
+          <h3 class="modal__title" id="modalTitle"></h3>
+          <p class="modal__date" id="modalDate"></p>
+          <p class="modal__note" id="modalNote"></p>
+          <ol class="modal__tracks" id="modalTracks"></ol>
+          <p class="modal__credits" id="modalCredits"></p>
+          <div class="modal__links" id="modalLinks"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/fire.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
